@@ -4,7 +4,7 @@
   "description": "Backend API untuk platform GuruNgaji",
   "main": "src/app.js",
   "scripts": {
-    "start": "node src/app.js",
+    "start": "node app.js",
     "dev": "nodemon src/app.js",
     "db:setup": "psql -U postgres -f schema.sql"
   },
