@@ -1,12 +1,13 @@
 const { Pool } = require('pg');
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  host: 'aws-1-ap-southeast-2.pooler.supabase.com',
+  port: 6543,
+  database: 'postgres',
+  user: 'postgres.nxvkjahxcuhmwdisupcp',
+  password: process.env.DB_PASSWORD,
   ssl: { rejectUnauthorized: false }
 });
-
-pool.on('connect', () => console.log('✅ Database terhubung!'));
-pool.on('error', (err) => console.error('❌ DB error:', err.message));
 
 module.exports = {
   query: (text, params) => pool.query(text, params),
